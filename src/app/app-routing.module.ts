@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdministradoresComponent } from './administradores/administradores.component';
-import { CrearAdministradorComponent } from './crear-administrador/crear-administrador.component';
-import { HomeAdministradorComponent } from './home-administrador/home-administrador.component';
-import { ConsultarAdministradorComponent } from './consultar-administrador/consultar-administrador.component';
+import { AdministradoresComponent } from './components/consultar-administradores/administradores.component';
+import { CrearAdministradorComponent } from './components/crear-administrador/crear-administrador.component';
+import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
+import { ConsultarAdministradorComponent } from './components/consultar-administrador/consultar-administrador.component';
 
 const routes: Routes = [
 
