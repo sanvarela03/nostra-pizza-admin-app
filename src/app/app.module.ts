@@ -8,12 +8,20 @@ import { AdministradoresComponent } from './administradores/administradores.comp
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
+import { CrearAdministradorComponent } from './crear-administrador/crear-administrador.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeAdministradorComponent } from './home-administrador/home-administrador.component';
+import { ConsultarAdministradorComponent } from './consultar-administrador/consultar-administrador.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdministradoresComponent
+    AdministradoresComponent,
+    CrearAdministradorComponent,
+    HeaderComponent,
+    HomeAdministradorComponent,
+    ConsultarAdministradorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<h1>Consultar administrador</h1>
+<form>
+    <label for="usuario">Usuario</label>
+    <input name = "usuario" type="text" [(ngModel)]="loginAdministrador.username"><br><br>
+
+    <label for="pass">Contraseña</label>
+    <input name = "pass" type="text" [(ngModel)]="loginAdministrador.password"><br>
+
+    <button (click)="onGet()">CONSULTAR</button><br><br>
+</form>
+
+
+
+
+<h5>ID : {{administrador.id}} </h5>
+<h5>USUARIO : {{administrador.username}} </h5>
+<h5>CONTRASEÑA : {{administrador.password}} </h5>

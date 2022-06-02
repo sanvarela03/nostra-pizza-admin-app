@@ -8,15 +8,15 @@ import { Administrador } from './administrador';
   styleUrls: ['./administradores.component.css']
 })
 export class AdministradoresComponent implements OnInit {
-  titulo = "administrador login"
+  titulo = "Listar administradores"
   administradores: Administrador[] = []
   constructor(private service: AdministradorService) { }
 
   ngOnInit(): void {
-    this.getAll();
+    this.onGetAll();
   }
 
-  getAll(): void{
+  onGetAll(): void{
     this.service.getAll().subscribe(
       (data) => {
           this.administradores=data;
