@@ -6,24 +6,29 @@ import { Administrador } from '../models/administrador';
 import { LoginAdministrador } from '../models/dto/login-administrador';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdministradorService {
-
   private url: string = 'http://localhost:8090/api/administradores';
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Administrador[]> {
     return this.http.get<Administrador[]>(this.url);
   }
 
   create(administrador: Administrador): Observable<Administrador> {
-    return this.http.post<Administrador>(this.url, administrador, { headers: this.httpHeaders });
+    return this.http.post<Administrador>(this.url, administrador, {
+      headers: this.httpHeaders,
+    });
   }
 
   get(loginAdministrador: LoginAdministrador): Observable<Administrador> {
-    return this.http.post<Administrador>(`${this.url}/login`, loginAdministrador, { headers: this.httpHeaders })
+    return this.http.post<Administrador>(
+      `${this.url}/login`,
+      loginAdministrador,
+      { headers: this.httpHeaders }
+    );
   }
 }
