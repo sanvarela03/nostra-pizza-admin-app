@@ -12,7 +12,8 @@ import { CrearAdministradorComponent } from './components/crear-administrador/cr
 import { HeaderComponent } from './components/header/header.component';
 import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
 import { ConsultarAdministradorComponent } from './components/consultar-administrador/consultar-administrador.component';
-
+import { AdministradorService } from './services/administrador.service';
+import { ProductoService } from './services/producto.service';
 
 @NgModule({
   declarations: [
@@ -21,15 +22,10 @@ import { ConsultarAdministradorComponent } from './components/consultar-administ
     CrearAdministradorComponent,
     HeaderComponent,
     HomeAdministradorComponent,
-    ConsultarAdministradorComponent
+    ConsultarAdministradorComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [AdministradorService, ProductoService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

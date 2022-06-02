@@ -31,4 +31,8 @@ export class AdministradorService {
       { headers: this.httpHeaders }
     );
   }
+
+  getById(id: any): Observable<Administrador> {
+    return this.http.get<Administrador>(`${this.url}/${id}`)
+  }
 }

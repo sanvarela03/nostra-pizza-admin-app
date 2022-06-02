@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/administradores', pathMatch: 'full' },
   { path: 'administradores', component: AdministradoresComponent },
   { path: 'crear', component: CrearAdministradorComponent },
-  { path: 'home', component: HomeAdministradorComponent },
+  { path: 'home/:id', component: HomeAdministradorComponent },
   { path: 'login', component: ConsultarAdministradorComponent }
 ];
 
