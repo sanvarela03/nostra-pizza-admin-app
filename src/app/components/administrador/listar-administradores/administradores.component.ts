@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdministradorService } from '../../services/administrador.service';
-import { Administrador } from '../../models/administrador';
+import { AdministradorService } from '../../../services/administrador.service';
+import { Administrador } from '../../../models/administrador';
 
 @Component({
   selector: 'app-administradores',

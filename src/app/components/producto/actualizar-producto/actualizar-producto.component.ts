@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto';
 import { TipoDeProducto } from 'src/app/models/tipo-de-producto';
-import { ProductoService } from '../../services/producto.service';
+import { ProductoService } from '../../../services/producto.service';
 
 @Component({
   selector: 'app-actualizar-producto',
   templateUrl: './actualizar-producto.component.html',
-  styleUrls: ['./actualizar-producto.component.css']
+  styleUrls: ['./actualizar-producto.component.css'],
 })
 export class ActualizarProductoComponent implements OnInit {
-
   producto: Producto = new Producto();
   tipoDeProducto: TipoDeProducto = new TipoDeProducto();
 
@@ -18,12 +17,11 @@ export class ActualizarProductoComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private service: ProductoService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.onLoad();
   }
-
 
   onLoad(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -33,9 +31,7 @@ export class ActualizarProductoComponent implements OnInit {
         if (data.tipoDeProducto) {
           this.tipoDeProducto = this.producto.tipoDeProducto;
         }
-
-      })
-
+      });
     });
   }
 
@@ -43,11 +39,9 @@ export class ActualizarProductoComponent implements OnInit {
     this.producto.tipoDeProducto = this.tipoDeProducto;
 
     console.log(this.producto);
+    
     this.service.update(this.producto).subscribe((data) => {
       this.router.navigate(['/home/1']);
-    })
-
+    });
   }
-
-
 }

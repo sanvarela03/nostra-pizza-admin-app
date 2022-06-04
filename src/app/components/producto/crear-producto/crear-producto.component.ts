@@ -7,27 +7,23 @@ import { ProductoService } from 'src/app/services/producto.service';
 @Component({
   selector: 'app-crear-producto',
   templateUrl: './crear-producto.component.html',
-  styleUrls: ['./crear-producto.component.css']
+  styleUrls: ['./crear-producto.component.css'],
 })
 export class CrearProductoComponent implements OnInit {
+  //ATRIBTUOS
+  constructor(private service: ProductoService, private router: Router) {}
+  producto: Producto = new Producto();
+  tipoDeProducto: TipoDeProducto = new TipoDeProducto();
 
-  producto : Producto = new Producto();
-  tipoDeProducto : TipoDeProducto = new TipoDeProducto();
-
-  constructor(private service: ProductoService, private router: Router) { }
-
-  ngOnInit(): void {
-  }
-
+  //METODOS
+  ngOnInit(): void {}
   onCreate(): void {
     console.log(this.producto);
     console.log(this.tipoDeProducto);
     this.producto.tipoDeProducto = this.tipoDeProducto;
     console.log(this.producto);
-
     this.service.create(this.producto).subscribe((data) => {
       this.router.navigate(['/home/1']);
     });
   }
-
 }

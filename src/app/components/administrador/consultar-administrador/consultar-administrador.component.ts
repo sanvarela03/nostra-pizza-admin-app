@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginAdministrador } from '../../models/dto/login-administrador';
-import { AdministradorService } from '../../services/administrador.service';
-import { Administrador } from '../../models/administrador';
+import { LoginAdministrador } from '../../../models/dto/login-administrador';
+import { AdministradorService } from '../../../services/administrador.service';
+import { Administrador } from '../../../models/administrador';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({

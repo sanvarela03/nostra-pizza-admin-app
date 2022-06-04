@@ -7,18 +7,14 @@ import { Producto } from '../models/producto';
   providedIn: 'root'
 })
 export class ProductoService {
+  //ATRIBUTOS
+  constructor(private http : HttpClient) { }
   private url: string = 'http://localhost:8090/api/productos';
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
 
-  constructor(private http : HttpClient) { }
-
-  getAll(): Observable<Producto[]> {
-    return this.http.get<Producto[]>(this.url);
-  }
-
+  //METODOS
   create(producto:Producto): Observable<Producto> {
-
     return this.http.post<Producto>(this.url, producto, {headers : this.httpHeaders})
   }
 
@@ -28,5 +24,9 @@ export class ProductoService {
 
   update(producto: Producto): Observable<Producto> {
     return this.http.put<Producto>(`${this.url}/${producto.id}`,Producto, {headers: this.httpHeaders});
+  }
+
+  getAll(): Observable<Producto[]> {
+    return this.http.get<Producto[]>(this.url);
   }
 }

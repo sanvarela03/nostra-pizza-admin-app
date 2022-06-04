@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdministradoresComponent } from './components/listar-administradores/administradores.component';
-import { CrearAdministradorComponent } from './components/crear-administrador/crear-administrador.component';
-import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
-import { ConsultarAdministradorComponent } from './components/consultar-administrador/consultar-administrador.component';
-import { CrearSucursalComponent } from './components/crear-sucursal/crear-sucursal.component';
-import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
-import { ActualizarSucursalComponent } from './components/actualizar-sucursal/actualizar-sucursal.component';
-import { ActualizarProductoComponent } from './components/actualizar-producto/actualizar-producto.component';
+import { AdministradoresComponent } from './components/administrador/listar-administradores/administradores.component';
+import { CrearAdministradorComponent } from './components/administrador/crear-administrador/crear-administrador.component';
+import { HomeAdministradorComponent } from './components/administrador/home-administrador/home-administrador.component';
+import { ConsultarAdministradorComponent } from './components/administrador/consultar-administrador/consultar-administrador.component';
+import { CrearSucursalComponent } from './components/sucursal/crear-sucursal/crear-sucursal.component';
+import { CrearProductoComponent } from './components/producto/crear-producto/crear-producto.component';
+import { ActualizarSucursalComponent } from './components/sucursal/actualizar-sucursal/actualizar-sucursal.component';
+import { ActualizarProductoComponent } from './components/producto/actualizar-producto/actualizar-producto.component';
 
 const routes: Routes = [
 
