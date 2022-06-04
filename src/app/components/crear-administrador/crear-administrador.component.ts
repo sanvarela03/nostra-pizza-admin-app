@@ -20,7 +20,7 @@ export class CrearAdministradorComponent implements OnInit {
     console.log('p: ' + this.administrador.password);
 
     this.service.create(this.administrador).subscribe((data) => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/administradores']);
     });
   }
 }

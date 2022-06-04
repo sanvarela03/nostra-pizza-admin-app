@@ -1,0 +1,36 @@
+<h1 style="color: rgb(172, 35, 214)">Productos</h1>
+<br>
+<button class="btn btn-primary" routerLink="/crearProducto">Crear producto</button>
+
+<br>
+<br>
+
+<table class="table table-bordered">
+  <thead class="table-dark " style="text-align:center; vertical-align:middle;">
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Precio <br>  ($)</th>
+      <th>Tiempo de preparacion<br> (HH:MM:SS)</th>
+      <th>Tipo de producto</th>
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of productos">
+      <td>{{p.id}}</td>
+      <td>{{p.nombre}}</td>
+      <td>{{p.descripcion}}</td>
+      <td>{{p.precio}}</td>
+      <td>{{p.tiempoEstimadoDePreparacion ? p.tiempoEstimadoDePreparacion : 'NaN'}}</td>
+      <td>{{p.tipoDeProducto ? p.tipoDeProducto.nombre : 'NaN' }}</td>
+      <td>
+        <button type="button" name="editar" [routerLink]="['/actualizarProducto', p.id]" class="btn btn-warning">
+          Editar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

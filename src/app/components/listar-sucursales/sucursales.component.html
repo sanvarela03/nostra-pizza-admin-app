@@ -1,0 +1,45 @@
+<h1 style="color: rgb(101, 94, 189)">Sucursales</h1>
+<br>
+<button class="btn btn-primary" routerLink="/crearSucursal">Crear sucursal</button>
+
+<br>
+<br>
+<table class="table table-bordered">
+  <thead class="table-dark" style="text-align:center; vertical-align:middle;">
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Hora de apertura<br>(HH:MM:SS)</th>
+      <th>Hora de cierre<br>(HH:MM:SS)</th>
+      <th>Costo de envio por km<br>($/km)</th>
+      <th>Ubicacion <br> (ciudad)</th>
+      <th>Ubicacion <br> (localidad)</th>
+      <th>Ubicacion <br> (direccion)</th>
+      <th>Estado</th>
+
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of sucursales">
+      <td>{{s.id}}</td>
+      <td>{{s.nombre}}</td>
+      <td>{{s.horaDeApertura}}</td>
+      <td>{{s.horaDeCierre}}</td>
+      <td>{{s.costoEnvioKM ? s.costoEnvioKM : 'NaN'}}</td>
+      <td>{{s.ubicacion ? s.ubicacion.ciudad : 'NaN' }}</td>
+      <td>{{s.ubicacion ? s.ubicacion.localidad : 'NaN' }}</td>
+      <td>{{s.ubicacion ? s.ubicacion.direccion : 'NaN' }}</td>
+      <td>
+        <div *ngIf="s.isOpen; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><span style="Color:green; font-weight: bold;">ABIERTO</span></ng-template>
+        <ng-template #elseBlock><span style="Color:red; font-weight: bold;">CERRADO</span></ng-template>
+      </td>
+      <td>
+        <button type="button" name="editar" [routerLink]="['/actualizarSucursal', s.id]" class="btn btn-warning">
+          Editar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

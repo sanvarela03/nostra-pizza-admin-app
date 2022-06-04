@@ -7,4 +7,5 @@ export class Sucursal {
     horaDeApertura!:string;
     horaDeCierre!:string;
     ubicacion!:Ubicacion;
+    isOpen!:boolean;
 }

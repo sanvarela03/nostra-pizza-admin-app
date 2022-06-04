@@ -1,0 +1,98 @@
+<div style="margin: 0 auto; width: 500px">
+  <div
+    class="card bg-dark text-white"
+    style="width: fit-content; padding: 30px; border-radius: 20px"
+  >
+    <div class="card-header">
+      <h1 style="color: rgb(24, 226, 91)">CREAR SUCURSAL</h1>
+    </div>
+
+    <form>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="email"
+            class="form-control"
+            name="nombre"
+            placeholder="Ingrese el nombre de la sucursal"
+            [(ngModel)]="sucursal.nombre"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="apertura">Hora de apertura</label>
+          <input
+            type="text"
+            class="form-control"
+            name="apertura"
+            placeholder="HH:MM:SS"
+            [(ngModel)]="sucursal.horaDeApertura"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="cierre">Hora de cierre</label>
+          <input
+            type="text"
+            class="form-control"
+            name="cierre"
+            placeholder="HH:MM:SS"
+            [(ngModel)]="sucursal.horaDeCierre"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="costo">Costo de envio por km</label>
+          <input
+            type="text"
+            class="form-control"
+            name="costo"
+            placeholder="$ "
+            [(ngModel)]="sucursal.costoEnvioKM"
+          />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ciudad">Ciudad</label>
+          <input
+            type="text"
+            class="form-control"
+            name="ciudad"
+            [(ngModel)]="ubicacion.ciudad"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="localidad">Localidad</label>
+          <input
+            type="text"
+            class="form-control"
+            name="localidad"
+            [(ngModel)]="ubicacion.localidad"
+          />
+        </div>
+        <div class="form-group">
+          <label for="direccion">Direccion</label>
+          <input
+            type="text"
+            class="form-control"
+            name="direccion"
+            [(ngModel)]="ubicacion.direccion"
+          />
+        </div>
+      </div>
+      <br />
+      <button
+        name="crearSucursal"
+        type="submit"
+        class="btn btn-success"
+        (click)="onCreate()"
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,9 +1,16 @@
 <h1>HOME</h1>
 
-<h5>ID : {{administrador.id}} </h5>
-<h5>USUARIO : {{administrador.username}} </h5>
-<h5>CONTRASEÑA : {{administrador.password}} </h5>
+<h5>
+  ID : <span style="color: red">{{ administrador.id }}</span>
+</h5>
+<h5>
+  USUARIO : <span style="color: red">{{ administrador.username }}</span>
+</h5>
+<h5>
+  CONTRASEÑA : <span style="color: red">{{ administrador.password }}</span>
+</h5>
 
-<h1>Crear sucursal</h1>
 
-<h1>Productos</h1>
+<app-sucursales></app-sucursales>
+
+<app-productos></app-productos>
