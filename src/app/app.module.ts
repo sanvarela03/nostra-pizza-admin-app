@@ -3,16 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdministradoresComponent } from './administradores/administradores.component';
+import { AdministradoresComponent } from './components/consultar-administradores/administradores.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
-import { CrearAdministradorComponent } from './crear-administrador/crear-administrador.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeAdministradorComponent } from './home-administrador/home-administrador.component';
-import { ConsultarAdministradorComponent } from './consultar-administrador/consultar-administrador.component';
-
+import { CrearAdministradorComponent } from './components/crear-administrador/crear-administrador.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
+import { ConsultarAdministradorComponent } from './components/consultar-administrador/consultar-administrador.component';
+import { AdministradorService } from './services/administrador.service';
+import { ProductoService } from './services/producto.service';
 
 @NgModule({
   declarations: [
@@ -21,15 +22,10 @@ import { ConsultarAdministradorComponent } from './consultar-administrador/consu
     CrearAdministradorComponent,
     HeaderComponent,
     HomeAdministradorComponent,
-    ConsultarAdministradorComponent
+    ConsultarAdministradorComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [AdministradorService, ProductoService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
