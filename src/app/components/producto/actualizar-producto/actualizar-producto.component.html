@@ -1,0 +1,80 @@
+<div style="margin: 0 auto; width: 500px">
+    <div
+      class="card bg-dark text-white"
+      style="width: fit-content; padding: 30px; border-radius: 20px"
+    >
+      <div class="card-header">
+        <h1 style="color: rgb(24, 152, 226); text-align: center;">ACTUALIZAR PRODUCTO</h1>
+      </div>
+  
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input
+              type="email"
+              class="form-control"
+              name="nombre"
+              placeholder="Ingrese el nombre del producto"
+              [(ngModel)]="producto.nombre"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="descripcion">Descripcion</label>
+            <input
+              type="text"
+              class="form-control"
+              name="descripcion"
+              placeholder="Ingrese la descripcion del producto"
+              [(ngModel)]="producto.descripcion"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="precio">Precio</label>
+            <input
+              type="text"
+              class="form-control"
+              name="precio"
+              placeholder="$"
+              [(ngModel)]="producto.precio"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="tiempoPreparacion">Tiempo estimado de preparacion</label>
+            <input
+              type="text"
+              class="form-control"
+              name="tiempoPreparacion"
+              placeholder="HH:MM:SS"
+              [(ngModel)]="producto.tiempoEstimadoDePreparacion"
+            />
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tipo">Tipo de producto - nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Pizza grande, Pizza pequeña, bebida etc, ..."
+              name="tipo"
+              [(ngModel)]="tipoDeProducto.nombre"
+            />
+          </div>
+        </div>
+        <br />
+        <button
+          name="crearproducto"
+          type="submit"
+          class="btn btn-info"
+          (click)="onUpdate()"
+        >
+          ACTUALIZAR
+        </button>
+      </form>
+    </div>
+  </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Administrador } from '../../models/administrador';
-import { AdministradorService } from '../../services/administrador.service';
+import { Administrador } from '../../../models/administrador';
+import { AdministradorService } from '../../../services/administrador.service';
 
 @Component({
   selector: 'app-crear-administrador',
@@ -20,7 +20,7 @@ export class CrearAdministradorComponent implements OnInit {
     console.log('p: ' + this.administrador.password);
 
     this.service.create(this.administrador).subscribe((data) => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/administradores']);
     });
   }
 }
